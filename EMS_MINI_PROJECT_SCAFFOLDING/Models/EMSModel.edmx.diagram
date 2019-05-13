@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="494266ce3ac645a7a4bff5ecc3ca7be0" Name="Diagram1">
+        <EntityTypeShape EntityType="EMSModel.Department_174778" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="EMSModel.User_Master_174778" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EMSModel.Employee_174778" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="EMSModel.Grade_Master_174778" Width="1.5" PointX="0.75" PointY="5.875" />
+        <AssociationConnector Association="EMSModel.FK__Employee___Emp_D__3DD58323" />
+        <AssociationConnector Association="EMSModel.FK__Employee___Emp_G__3EC9A75C" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

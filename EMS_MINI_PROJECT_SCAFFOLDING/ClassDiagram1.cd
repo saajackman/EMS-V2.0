@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Controllers.DepartmentController">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACARAACAACAAAAIAAAEAgEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\DepartmentController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Department_174778" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Controllers.EmployeeController">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Employee_174778" Type="EMS_MINI_PROJECT_SCAFFOLDING.Models.Employee_174778" FixedFromPoint="true">
+      <Path>
+        <Point X="2.25" Y="2.812" />
+        <Point X="4.5" Y="2.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Grade_Master_174778" Type="EMS_MINI_PROJECT_SCAFFOLDING.Models.Grade_Master_174778" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.437" />
+        <Point X="2.875" Y="3.437" />
+        <Point X="2.875" Y="4" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.077" Y="0.612" Height="0.182" Width="1.537" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAIAAACARAACCACAAAAIAAAEAgEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\EmployeeController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Employee_174778" />
+      <Property Name="Department_174778" />
+      <Property Name="Grade_Master_174778" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Controllers.GradeMasterController">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <AssociationLine Name="Grade_Master_174778" Type="EMS_MINI_PROJECT_SCAFFOLDING.Models.Grade_Master_174778" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="4.812" />
+        <Point X="2.25" Y="4.812" />
+        <Point X="2.25" Y="6.574" />
+        <Point X="2.875" Y="6.574" />
+        <Point X="2.875" Y="6.324" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.628" Y="0.391" Height="0.182" Width="1.462" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACARAACAAAAAAAIAAAEAgEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\GradeMasterController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Grade_Master_174778" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Controllers.LoginController">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <AssociationLine Name="User_Master_174778" Type="EMS_MINI_PROJECT_SCAFFOLDING.Models.User_Master_174778" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="5.079" />
+        <Point X="8" Y="5.079" />
+        <Point X="8" Y="7.312" />
+        <Point X="5" Y="7.312" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAABIAAAAAAAAAAAgAIAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\LoginController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User_Master_174778" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Controllers.UserMasterController">
+    <Position X="8.25" Y="6" Width="1.5" />
+    <AssociationLine Name="User_Master_174778" Type="EMS_MINI_PROJECT_SCAFFOLDING.Models.User_Master_174778">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.096" Y="0.079" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAABACARAACAAAAAAAIAAAEAgEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserMasterController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User_Master_174778" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Models.EMSContext">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIABAAAQAAAAACAAAAAAEAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\EMSModel.Context.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LoginController" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Models.Department_174778">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Employee_1747781" Type="EMS_MINI_PROJECT_SCAFFOLDING.Models.Employee_174778">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.346" Y="0.079" Height="0.182" Width="1.232" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAIAAAAAAAAAAAAAEAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Department_174778.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Employee_1747781" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Models.Employee_174778">
+    <Position X="4.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAEAABAgQACAQACABAAAAAAAAIQAUAAAEAAAAAEA=</HashCode>
+      <FileName>Models\Employee_174778.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Models.Grade_Master_174778">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <AssociationLine Name="Employee_1747781" Type="EMS_MINI_PROJECT_SCAFFOLDING.Models.Employee_174778" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="5.162" />
+        <Point X="4.25" Y="5.162" />
+        <Point X="4.25" Y="6.75" />
+        <Point X="5.25" Y="6.75" />
+        <Point X="5.25" Y="6.546" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAICAAAAgAAAAAAAAAQAAAAAAAQEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Grade_Master_174778.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Employee_1747781" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EMS_MINI_PROJECT_SCAFFOLDING.Models.User_Master_174778">
+    <Position X="3.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAACAAAAQAAAAIAAAA=</HashCode>
+      <FileName>Models\User_Master_174778.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

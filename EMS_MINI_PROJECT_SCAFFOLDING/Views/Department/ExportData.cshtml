@@ -1,0 +1,38 @@
+﻿@model IEnumerable<EMS_MINI_PROJECT_SCAFFOLDING.Models.Department_174778>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Export Data</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Export Data", "PrintExportData")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Department Name:
+                @Html.DisplayNameFor(model => model.Dept_Name)
+            </th>
+           
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dept_Name)
+            </td>
+           
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

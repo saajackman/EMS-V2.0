@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Department_174778">
+          <Key>
+            <PropertyRef Name="Dept_ID" />
+          </Key>
+          <Property Name="Dept_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dept_Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee_174778">
+          <Key>
+            <PropertyRef Name="Emp_ID" />
+          </Key>
+          <Property Name="Emp_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emp_First_Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Emp_Last_Name" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Emp_Date_of_Birth" Type="date" Nullable="false" />
+          <Property Name="Emp_Date_of_Joining" Type="date" Nullable="false" />
+          <Property Name="Emp_Dept_ID" Type="int" />
+          <Property Name="Emp_Grade" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Emp_Designation" Type="varchar" MaxLength="50" />
+          <Property Name="Emp_Basic" Type="int" Nullable="false" />
+          <Property Name="Emp_Gender" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Emp_Marital_Status" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Emp_Home_Address" Type="varchar" MaxLength="100" />
+          <Property Name="Emp_Contact_Num" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Grade_Master_174778">
+          <Key>
+            <PropertyRef Name="Grade_Code" />
+          </Key>
+          <Property Name="Grade_Code" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Min_Salary" Type="int" Nullable="false" />
+          <Property Name="Max_Salary" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Master_174778">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserType" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <Association Name="FK__Employee___Emp_D__3DD58323">
+          <End Role="Department_174778" Type="Self.Department_174778" Multiplicity="0..1" />
+          <End Role="Employee_174778" Type="Self.Employee_174778" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department_174778">
+              <PropertyRef Name="Dept_ID" />
+            </Principal>
+            <Dependent Role="Employee_174778">
+              <PropertyRef Name="Emp_Dept_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee___Emp_G__3EC9A75C">
+          <End Role="Grade_Master_174778" Type="Self.Grade_Master_174778" Multiplicity="1" />
+          <End Role="Employee_174778" Type="Self.Employee_174778" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grade_Master_174778">
+              <PropertyRef Name="Grade_Code" />
+            </Principal>
+            <Dependent Role="Employee_174778">
+              <PropertyRef Name="Emp_Grade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EMSModelStoreContainer">
+          <EntitySet Name="Department_174778" EntityType="Self.Department_174778" Schema="sqluser" store:Type="Tables" />
+          <EntitySet Name="Employee_174778" EntityType="Self.Employee_174778" Schema="sqluser" store:Type="Tables" />
+          <EntitySet Name="Grade_Master_174778" EntityType="Self.Grade_Master_174778" Schema="sqluser" store:Type="Tables" />
+          <EntitySet Name="User_Master_174778" EntityType="Self.User_Master_174778" Schema="sqluser" store:Type="Tables" />
+          <AssociationSet Name="FK__Employee___Emp_D__3DD58323" Association="Self.FK__Employee___Emp_D__3DD58323">
+            <End Role="Department_174778" EntitySet="Department_174778" />
+            <End Role="Employee_174778" EntitySet="Employee_174778" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee___Emp_G__3EC9A75C" Association="Self.FK__Employee___Emp_G__3EC9A75C">
+            <End Role="Grade_Master_174778" EntitySet="Grade_Master_174778" />
+            <End Role="Employee_174778" EntitySet="Employee_174778" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EMSContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Department_174778" EntityType="EMSModel.Department_174778" />
+          <EntitySet Name="User_Master_174778" EntityType="EMSModel.User_Master_174778" />
+          <EntitySet Name="Employee_174778" EntityType="EMSModel.Employee_174778" />
+          <EntitySet Name="Grade_Master_174778" EntityType="EMSModel.Grade_Master_174778" />
+          <AssociationSet Name="FK__Employee___Emp_D__3DD58323" Association="EMSModel.FK__Employee___Emp_D__3DD58323">
+            <End Role="Department_174778" EntitySet="Department_174778" />
+            <End Role="Employee_174778" EntitySet="Employee_174778" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employee___Emp_G__3EC9A75C" Association="EMSModel.FK__Employee___Emp_G__3EC9A75C">
+            <End Role="Grade_Master_174778" EntitySet="Grade_Master_174778" />
+            <End Role="Employee_174778" EntitySet="Employee_174778" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Department_174778">
+          <Key>
+            <PropertyRef Name="Dept_ID" />
+          </Key>
+          <Property Name="Dept_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dept_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee_174778" Relationship="EMSModel.FK__Employee___Emp_D__3DD58323" FromRole="Department_174778" ToRole="Employee_174778" />
+        </EntityType>
+        <EntityType Name="User_Master_174778">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Employee_174778">
+          <Key>
+            <PropertyRef Name="Emp_ID" />
+          </Key>
+          <Property Name="Emp_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_First_Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Last_Name" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Date_of_Birth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Emp_Date_of_Joining" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Emp_Dept_ID" Type="Int32" />
+          <Property Name="Emp_Grade" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Basic" Type="Int32" Nullable="false" />
+          <Property Name="Emp_Gender" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Marital_Status" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Home_Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Contact_Num" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Department_174778" Relationship="EMSModel.FK__Employee___Emp_D__3DD58323" FromRole="Employee_174778" ToRole="Department_174778" />
+          <NavigationProperty Name="Grade_Master_174778" Relationship="EMSModel.FK__Employee___Emp_G__3EC9A75C" FromRole="Employee_174778" ToRole="Grade_Master_174778" />
+        </EntityType>
+        <EntityType Name="Grade_Master_174778">
+          <Key>
+            <PropertyRef Name="Grade_Code" />
+          </Key>
+          <Property Name="Grade_Code" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Min_Salary" Type="Int32" Nullable="false" />
+          <Property Name="Max_Salary" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee_174778" Relationship="EMSModel.FK__Employee___Emp_G__3EC9A75C" FromRole="Grade_Master_174778" ToRole="Employee_174778" />
+        </EntityType>
+        <Association Name="FK__Employee___Emp_D__3DD58323">
+          <End Type="EMSModel.Department_174778" Role="Department_174778" Multiplicity="0..1" />
+          <End Type="EMSModel.Employee_174778" Role="Employee_174778" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department_174778">
+              <PropertyRef Name="Dept_ID" />
+            </Principal>
+            <Dependent Role="Employee_174778">
+              <PropertyRef Name="Emp_Dept_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employee___Emp_G__3EC9A75C">
+          <End Type="EMSModel.Grade_Master_174778" Role="Grade_Master_174778" Multiplicity="1" />
+          <End Type="EMSModel.Employee_174778" Role="Employee_174778" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grade_Master_174778">
+              <PropertyRef Name="Grade_Code" />
+            </Principal>
+            <Dependent Role="Employee_174778">
+              <PropertyRef Name="Emp_Grade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EMSModelStoreContainer" CdmEntityContainer="EMSContext">
+          <EntitySetMapping Name="Department_174778">
+            <EntityTypeMapping TypeName="EMSModel.Department_174778">
+              <MappingFragment StoreEntitySet="Department_174778">
+                <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+                <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Master_174778">
+            <EntityTypeMapping TypeName="EMSModel.User_Master_174778">
+              <MappingFragment StoreEntitySet="User_Master_174778">
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_174778">
+            <EntityTypeMapping TypeName="EMSModel.Employee_174778">
+              <MappingFragment StoreEntitySet="Employee_174778">
+                <ScalarProperty Name="Emp_Contact_Num" ColumnName="Emp_Contact_Num" />
+                <ScalarProperty Name="Emp_Home_Address" ColumnName="Emp_Home_Address" />
+                <ScalarProperty Name="Emp_Marital_Status" ColumnName="Emp_Marital_Status" />
+                <ScalarProperty Name="Emp_Gender" ColumnName="Emp_Gender" />
+                <ScalarProperty Name="Emp_Basic" ColumnName="Emp_Basic" />
+                <ScalarProperty Name="Emp_Designation" ColumnName="Emp_Designation" />
+                <ScalarProperty Name="Emp_Grade" ColumnName="Emp_Grade" />
+                <ScalarProperty Name="Emp_Dept_ID" ColumnName="Emp_Dept_ID" />
+                <ScalarProperty Name="Emp_Date_of_Joining" ColumnName="Emp_Date_of_Joining" />
+                <ScalarProperty Name="Emp_Date_of_Birth" ColumnName="Emp_Date_of_Birth" />
+                <ScalarProperty Name="Emp_Last_Name" ColumnName="Emp_Last_Name" />
+                <ScalarProperty Name="Emp_First_Name" ColumnName="Emp_First_Name" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grade_Master_174778">
+            <EntityTypeMapping TypeName="EMSModel.Grade_Master_174778">
+              <MappingFragment StoreEntitySet="Grade_Master_174778">
+                <ScalarProperty Name="Max_Salary" ColumnName="Max_Salary" />
+                <ScalarProperty Name="Min_Salary" ColumnName="Min_Salary" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Grade_Code" ColumnName="Grade_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

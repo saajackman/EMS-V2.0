@@ -1,0 +1,127 @@
+﻿@model EMS_MINI_PROJECT_SCAFFOLDING.Models.Employee_174778
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Employee First Name:
+            @*@Html.DisplayNameFor(model => model.Emp_First_Name)*@
+        </dt>
+
+        <dd>
+
+            @Html.DisplayFor(model => model.Emp_First_Name)
+        </dd>
+
+        <dt>
+            Employee Last Name:
+            @*@Html.DisplayNameFor(model => model.Emp_Last_Name)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Last_Name)
+        </dd>
+
+        <dt>
+            Employee Date Of Birth:
+            @*@Html.DisplayNameFor(model => model.Emp_Date_of_Birth)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Date_of_Birth)
+        </dd>
+
+        <dt>
+            Employee Date Of joining:
+            @*@Html.DisplayNameFor(model => model.Emp_Date_of_Joining)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Date_of_Joining)
+        </dd>
+
+        <dt>
+            Employee Grade:
+            @*@Html.DisplayNameFor(model => model.Emp_Grade)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Grade)
+        </dd>
+
+        <dt>
+            Employee Designation:
+            @*@Html.DisplayNameFor(model => model.Emp_Designation)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Designation)
+        </dd>
+
+        <dt>
+            Employee Basic:
+            @*@Html.DisplayNameFor(model => model.Emp_Basic)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Basic)
+        </dd>
+
+        <dt>
+            Employee Gender:
+            @*@Html.DisplayNameFor(model => model.Emp_Gender)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Gender)
+        </dd>
+
+        <dt>
+            Employee Martial Status:
+            @*@Html.DisplayNameFor(model => model.Emp_Marital_Status)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Marital_Status)
+        </dd>
+
+        <dt>
+            Employee Home Address:
+            @*@Html.DisplayNameFor(model => model.Emp_Home_Address)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Home_Address)
+        </dd>
+
+        <dt>
+            Employee Contact Number:
+            @*@Html.DisplayNameFor(model => model.Emp_Contact_Num)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Contact_Num)
+        </dd>
+
+        <dt>
+            Employee Department Name:
+            @*@Html.DisplayNameFor(model => model.Department_174778.Dept_Name)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department_174778.Dept_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Emp_ID }) |
+    @Html.ActionLink("Back to List", "Index" , new { @class = "btn btn-primary" })
+</p>

@@ -1,0 +1,13 @@
+﻿@model EMS_MINI_PROJECT_SCAFFOLDING.Models.User_Master_174778
+
+@{
+    ViewBag.Title = "UserDashBoard";
+}
+
+<h2>UserDashBoard</h2>
+
+@if (Session["UserName"] != null)
+{
+   <text>
+    Welcome <b> @Session["UserName"].ToString()</b> </text>
+} 

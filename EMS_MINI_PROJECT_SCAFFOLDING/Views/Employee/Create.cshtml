@@ -1,0 +1,160 @@
+﻿@model EMS_MINI_PROJECT_SCAFFOLDING.Models.Employee_174778
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Employee</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.Label("Employee ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.Emp_ID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Emp_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label("First Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Emp_First_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Emp_First_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Last Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Emp_Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Emp_Last_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label("Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
+                <input type="date" name="Emp_Date_of_Birth" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Date of Joining", htmlAttributes: new { @class = "control-label col-md-2" })
+                <input type="date" name="Emp_Date_of_Joining" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Department ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownList("Emp_Dept_ID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Emp_Dept_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Grade", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownList("Emp_Grade", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Emp_Grade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Designation", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Emp_Designation, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Emp_Designation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Basic", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Emp_Basic, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Emp_Basic, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Gender", htmlAttributes: new { @class = "control-label col-md-2" })
+                <select name="Emp_Gender" class="form-control">
+                    <option value="">-select Gender-</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Marital Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                <select name="Emp_Marital_Status" class="form-control">
+                    <option value="">-select Marital status-</option>
+                    <option value="S">Bachelor</option>
+                    <option value="M">Married</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Address", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Emp_Home_Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Emp_Home_Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                @Html.Label("Contact No", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Emp_Contact_Num, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Emp_Contact_Num, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+@*@if (Model != null)
+    {
+        <script type="text/javascript">
+            $(function () {
+                alert("Employee Added Successfully");
+            });
+        </script>
+    }*@
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
